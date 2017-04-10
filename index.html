@@ -1,0 +1,40 @@
+<html>
+<head>
+</head>
+<body>
+<button id="play"> Play </button>
+<button id="pause"> Pause</button>
+<button id="stop"> Stop</button>
+
+<script src="howler.core.js"></script>
+<script src="jquery-3.2.0.min.js"></script>
+<script>
+
+    $(document).delegate('#play', 'click', function (e) {
+        sound.play();
+    });
+    $('#pause').click(function (e) {
+        sound.pause();
+    });
+    $('#stop').click(function (e) {
+        sound.stop();
+    });
+   /* var sound = new Howl({
+      src: ['sound.webm', 'sound.mp3']
+    });
+*/
+
+	var sound = new Howl({
+	  src: ['sound.mp3', 'sound.wav'],
+	  autoplay: false,
+	  loop: false,
+	  volume: 0.5,
+	  onend: function() {
+	    console.log('Finished!');
+	  }
+	});
+
+</script>
+</body>
+</html>
+
